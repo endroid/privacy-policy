@@ -6,8 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
   group: sync-privacy-policies
@@ -17,12 +16,13 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Check source access token
+      - name: Check access tokens
         env:
           ANDROID_DEV_READ_TOKEN: ${{ secrets.ANDROID_DEV_READ_TOKEN }}
+          PRIVACY_POLICY_WRITE_TOKEN: ${{ secrets.PRIVACY_POLICY_WRITE_TOKEN }}
         run: |
-          if [[ -z "$ANDROID_DEV_READ_TOKEN" ]]; then
-            echo '::error::Set ANDROID_DEV_READ_TOKEN to a token with Contents read access to endroid/android-dev.'
+          if [[ -z "$ANDROID_DEV_READ_TOKEN" || -z "$PRIVACY_POLICY_WRITE_TOKEN" ]]; then
+            echo '::error::Set ANDROID_DEV_READ_TOKEN (Contents read on endroid/android-dev) and PRIVACY_POLICY_WRITE_TOKEN (Contents write on endroid/privacy-policy).'
             exit 1
           fi
 
@@ -30,8 +30,8 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
           ref: main
+          token: ${{ secrets.PRIVACY_POLICY_WRITE_TOKEN }}
           path: policies
-          persist-credentials: false
 
       - name: Check out source policies
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -44,31 +44,32 @@ jobs:
           sparse-checkout: apps/*/play/privacy-policy.html
           sparse-checkout-cone-mode: false
 
-      - name: Copy policies to the repository root
+      - name: Sync policies to the repository root
         working-directory: policies
         shell: bash
         run: |
           shopt -s nullglob
-          policies=(../android-dev/apps/*/play/privacy-policy.html)
-          if (( ${#policies[@]} == 0 )); then
-            echo '::error::No source privacy policies found.'
-            exit 1
-          fi
-          for policy in "${policies[@]}"; do
+          for policy in ../android-dev/apps/*/play/privacy-policy.html; do
             game="${policy#../android-dev/apps/}"
             game="${game%%/*}"
             cp -- "$policy" "$game.html"
           done
+          for policy in *.html; do
+            game="${policy%.html}"
+            if [[ ! -f "../android-dev/apps/$game/play/privacy-policy.html" ]]; then
+              rm -- "$policy"
+            fi
+          done
 
-      - name: Open or update the policy sync pull request
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8
-        with:
-          path: policies
-          add-paths: ':(top,glob)*.html'
-          branch: automation/sync-privacy-policies
-          commit-message: Sync privacy policies from android-dev
-          title: Sync privacy policies from android-dev
-          body: |
-            Copies `apps/<game>/play/privacy-policy.html` from `endroid/android-dev` main to `<game>.html` in this repository.
-
-            Existing policies without a matching source are left unchanged. Review and merge to publish the updates.
+      - name: Commit and push changes to main
+        working-directory: policies
+        run: |
+          git add --all
+          if git diff --cached --quiet; then
+            echo 'Privacy policies are already up to date.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Sync privacy policies from android-dev'
+          git push origin HEAD:main

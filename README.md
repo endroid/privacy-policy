@@ -10,20 +10,21 @@ manually from the Actions tab.
 
 It copies every `apps/<game>/play/privacy-policy.html` on `endroid/android-dev`'s
 `main` branch to `<game>.html` at this repository's root, preserving the file
-contents. New and changed policies are proposed in one pull request on
-`automation/sync-privacy-policies`; later runs update that same pull request.
-No pull request is created when there are no changes. Policies without a
-matching source are not deleted. Review and merge the pull request to publish.
+contents. New, changed, and removed policies are committed directly to `main`.
+No commit is created when there are no changes. Root-level HTML policies
+without a matching source are deleted; if the source checkout contains no
+policies, all root-level HTML policies are removed. A failed source checkout
+stops the job before syncing. Other files are left untouched.
 
 ### Required setup
 
 1. Add an Actions repository secret named `ANDROID_DEV_READ_TOKEN` containing a
    fine-grained personal access token with **Contents: Read-only** access to the
-   private `endroid/android-dev` repository. Approve the token in the organization
-   if required. The workflow does not use this token to write to either repository.
-2. In **Settings → Actions → General → Workflow permissions**, enable
-   **Allow GitHub Actions to create and approve pull requests** (the organization
-   must permit this). The workflow uses this repository's `GITHUB_TOKEN` with
-   contents and pull-request write permissions to propose updates; it does not
-   approve or merge them.
-3. Merge the workflow pull request into `main` to enable the weekly schedule.
+   private `endroid/android-dev` repository.
+2. Add an Actions repository secret named `PRIVACY_POLICY_WRITE_TOKEN` containing
+   a fine-grained personal access token with **Contents: Read and write** access
+   to `endroid/privacy-policy`. Its owner must be allowed to push to `main`.
+   A personal access token is used instead of `GITHUB_TOKEN` because pushes with
+   `GITHUB_TOKEN` do not trigger this repository's branch-based GitHub Pages build.
+3. Approve both tokens in the organization if required. The workflow must be on
+   `main` for the weekly schedule to run. No pull-request permissions are needed.

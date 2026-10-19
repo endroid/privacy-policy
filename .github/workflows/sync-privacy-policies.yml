@@ -2,7 +2,7 @@ name: Sync privacy policies
 
 on:
   schedule:
-    - cron: '17 7 * * 1'
+    - cron: '17 1 * * *'
   workflow_dispatch:
 
 permissions:

@@ -19,16 +19,32 @@
 <body>
 <main>
   <h1>Sculune<br>Privacy Policy</h1>
-  <p class="meta">Last updated: 1 November 2026.</p>
+  <p class="meta">Last updated: 2 November 2026.</p>
 
-  <p>Sculune is an offline wallpaper collection by Endroid. The app does not access
-    the internet, require an account, show ads, or include analytics or tracking
-    SDKs. We do not collect personal information through the app.</p>
+  <p>Sculune is an offline-capable wallpaper collection by Endroid. It does not
+    require a Sculune account, show ads, or include analytics or tracking SDKs.
+    The app makes no direct internet requests and does not upload information
+    to Endroid. Google Play purchase verification is described below.</p>
 
   <h2>Local information</h2>
-  <p>Your saved favourites remain in the app's private storage on your device.
+  <p>Your saved favourites and a successful purchase-verification flag remain
+    in the app's private storage on your device.
     Android app backup is disabled. Clearing app data or uninstalling removes
-    that local library.</p>
+    that local information.</p>
+
+  <h2>Google Play purchase verification</h2>
+  <p>Before a purchase has been confirmed on this installation, Sculune checks
+    whether Android reports an internet connection and asks the installed Google
+    Play service to verify the purchase. Google Play handles its own network
+    communication and associated account, application and device information
+    under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+    Its signed response is verified locally; Sculune does not retain the response
+    payload or Play user identifier, or send it to Endroid.</p>
+  <p>Once verified, that installation remembers the confirmation and stops asking
+    Play. Offline use always remains available, including before verification.
+    Connection failures, timeouts and unavailable Play services do not block
+    access. A confirmed online denial can restrict only an installation whose
+    purchase has never been verified; no denial is stored permanently.</p>
 
   <h2>Wallpapers and exported images</h2>
   <p>When you choose to apply artwork, Sculune sends the image to Android's

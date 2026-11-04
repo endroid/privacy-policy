@@ -41,10 +41,10 @@
 
   <h2>Google Play licence verification</h2>
   <p>Stained Glass asks the Google Play service whether your Google account has an
-    entitlement to the pack. Google Play may need internet access. The pack receives
-    a signed licence response and caches the verdict for Google's validity/retry
-    allowance. Android's app-scoped device identifier protects the local cache;
-    it is not sent to Endroid.</p>
+    entitlement to the pack. Google Play may need internet access. The pack includes
+    Google's signed response in the request ZIP when available, or records that
+    verification was unavailable. No purchase popup or local licence cache gates
+    sending a request.</p>
   <p>Google processes licensing under
     <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
     The pack has no direct internet permission, but the separate Play service can

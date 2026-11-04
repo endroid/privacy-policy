@@ -26,8 +26,8 @@
   <h2>The short version</h2>
   <p>Softsignal is a paid icon pack without advertisements, analytics, tracking SDKs,
     in-app purchases or a separate Softsignal account. Browsing and applying icons
-    work without sending information to Endroid. Google Play verifies your entitlement
-    before enabling icon requests. We receive request or support information only
+    work without sending information to Endroid. Request ZIPs retain Google Play
+    licence verification when available, without blocking requests. We receive request or support information only
     when you choose to send it to us.</p>
 
   <h2>Information kept on your device</h2>
@@ -42,10 +42,9 @@
   <h2>Google Play licence verification</h2>
   <p>Softsignal asks the Google Play service whether your Google account has an
     entitlement to this pack. This can require an internet connection through Google
-    Play. The app receives a signed licence response and caches the result for the
-    validity/retry period specified by Google. It uses Android's app-scoped device
-    identifier locally to protect that cache; it does not send this identifier to
-    Endroid.</p>
+    Play. The app includes Google's signed response in the request ZIP when available,
+    or records that verification was unavailable. No purchase popup or local licence
+    cache gates sending a request.</p>
   <p>Google Play processes licensing information under
     <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
     Endroid does not receive your Google password, payment details or purchase order

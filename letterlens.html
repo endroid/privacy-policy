@@ -18,12 +18,14 @@
 <body>
 <main>
   <h1>Letterlens</h1>
-  <p class="meta">Privacy policy · effective 8 November 2026<br>
+  <p class="meta">Privacy policy · effective 9 November 2026<br>
     Provided by Endroid · <a href="mailto:info@endroid.nl">info@endroid.nl</a></p>
 
   <h2>Summary</h2>
-  <p>Letterlens reads your Wordfeud board on your phone and suggests moves. It has no account,
-    no ads, no analytics and no internet permission. Nothing it reads leaves your device.</p>
+  <p>Letterlens reads your Wordfeud board on your phone and suggests moves. It has no account of
+    its own, no ads and no analytics. Nothing it reads from the screen leaves your device. It only
+    goes online if you connect a GitHub repository to keep your word list in, and then only to
+    GitHub.</p>
 
   <h2>Screenshots and the accessibility service</h2>
   <p>When you turn on the Letterlens accessibility service, it watches which app is in front so
@@ -41,12 +43,21 @@
   <p>A screenshot you share with Letterlens or pick in the app is read on the device in the same
     way and is not stored or sent anywhere.</p>
 
-  <h2>Word list</h2>
-  <p>The Dutch word list (based on OpenTaal) is part of the app. Letterlens does not look words
-    up online.</p>
+  <h2>Word list and GitHub sync</h2>
+  <p>The Dutch word list (based on OpenTaal) is part of the app. You can add words and mark words
+    invalid; the list and your changes are kept in the app's private storage on your device.
+    Letterlens never looks up the words on your board or rack online.</p>
+  <p>Optionally you can connect a GitHub repository you own (with GitHub's device sign-in, through
+    the Endroid Notes GitHub App, which can only read and write the contents of repositories you
+    allow it). Letterlens then stores the whole word list there as text files and exchanges only
+    those files with GitHub: it downloads list files that changed and uploads the ones you changed.
+    The GitHub access token is stored in the app's private storage on your device and sent only to
+    GitHub. GitHub's own privacy statement applies to what you store there. Disconnecting stops
+    syncing; revoke the app on GitHub to end its access, and uninstall Letterlens or clear its data
+    to delete the token and the list from your device.</p>
 
   <h2>Settings</h2>
-  <p>Letterlens stores only its own settings on your device: where you moved its button and
+  <p>Letterlens also stores its own settings on your device: where you moved its button and
     whether calibration screenshots are kept. They are not backed up or shared.</p>
 
   <h2>Children</h2>

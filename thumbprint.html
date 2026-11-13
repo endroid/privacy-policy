@@ -1,9 +1,132 @@
 <!doctype html>
-<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Thumbprint Privacy Policy</title>
-<main><h1>Thumbprint Privacy Policy</h1><p>Updated 12 November 2026 · Endroid · nl.endroid.thumbprint</p>
-<p>Thumbprint is an offline Android icon pack. It has no advertisements, analytics, tracking SDKs, accounts, in-app purchases or subscriptions. It does not automatically send information to Endroid.</p>
-<h2>On your device</h2><p>Favourite icon identifiers stay in private app preferences. Android may restore search text, categories and scroll position when recreating the activity. Backup is disabled. Compatible launchers and installed apps are queried locally for applying icons and selecting optional requests. Thumbprint does not read your contacts, messages, photos or location.</p>
-<h2>Choosing icons</h2><p>Using another app's icon picker returns your selected icon as a cached PNG with a temporary read grant. Applying the pack opens a compatible launcher or Android home settings. The receiving app controls its copy and settings.</p>
-<h2>Optional requests</h2><p>You choose which installed apps to request and whether to share the resulting ZIP through your email app. The ZIP contains selected app names, launcher components and icon images, plus Google's signed Play verification response when available, including a denial, or an explicit unavailable record. There is no purchase gate. Nothing is emailed automatically. Your email provider processes messages under its own policy. If you send a request to Endroid, its contents and your email are used to answer and fulfil it; ask for deletion by contacting us.</p>
-<h2>Your choices</h2><p>Clear app storage or uninstall to remove local favourites and cached data. Copies shared with another app or by email are governed by that service. Contact <a href="mailto:info@endroid.nl">info@endroid.nl</a> about privacy, access or deletion. Where applicable, you may complain to your local data-protection authority.</p></main></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Thumbprint handles your information: local favourites, optional icon requests, Google Play verification and your privacy choices.">
+  <meta name="theme-color" content="#f8f3eb">
+  <title>Privacy policy · Thumbprint</title>
+  <style>
+    :root { color-scheme: light; --paper: #f8f3eb; --ink: #332b30; --muted: #6f6166; --green: #285d48; --line: #e6dcd1; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.75 system-ui, sans-serif; }
+    a { color: var(--green); text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #a54f2c; outline-offset: 5px; border-radius: 3px; }
+    .skip { position: absolute; top: -80px; left: 20px; z-index: 2; padding: 8px 16px; background: white; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(1100px, 100%); margin: auto; padding: 0 32px; }
+    .top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 30px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+    .brand { color: var(--green); font-size: 25px; font-weight: 850; letter-spacing: -1.2px; }
+    .brand span { display: block; margin-top: -3px; color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+    nav { display: flex; flex-wrap: wrap; gap: 5px; }
+    nav a { padding: 9px 15px; border-radius: 24px; font-size: 14px; font-weight: 650; text-decoration: none; }
+    nav a[aria-current="page"] { background: var(--green); color: #fffdf7; box-shadow: 0 3px 0 #163e2e; }
+    .hero { position: relative; padding: 56px 0 34px; }
+    .eyebrow { margin: 0 0 16px; color: #8a4d34; font-size: 12px; font-weight: 750; letter-spacing: 2px; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 760px; color: var(--green); font-size: clamp(39px, 6.4vw, 66px); font-weight: 800; line-height: 1.08; letter-spacing: -2.5px; }
+    h1 span { display: block; margin-top: 14px; color: var(--ink); font-size: .49em; font-weight: 500; letter-spacing: -1px; }
+    .intro { max-width: 650px; margin: 24px 0 18px; color: var(--muted); font-size: 18px; }
+    .date { color: var(--muted); font-size: 13px; }
+    .pebbles { position: absolute; top: 64px; right: 10px; width: 150px; height: 125px; pointer-events: none; }
+    .pebbles i { position: absolute; width: 73px; height: 77px; border-radius: 46% 54% 43% 57%; background: #e6a083; box-shadow: inset 8px 9px 13px #ffffff65, inset -6px -8px 12px #703c3229, 0 10px 16px #65463413; transform: rotate(-18deg); }
+    .pebbles i:nth-child(2) { left: 70px; top: 6px; width: 69px; height: 69px; background: #b4c89b; transform: rotate(15deg); }
+    .pebbles i:nth-child(3) { left: 42px; top: 62px; width: 60px; height: 57px; background: #e9cd87; transform: rotate(30deg); }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 48px; }
+    .summary div { padding: 20px 22px; border: 1px solid var(--line); border-radius: 18px; background: #fffdf8; box-shadow: 0 4px 0 #ede4d9; }
+    .summary strong { display: block; color: var(--green); font-size: 18px; }
+    .summary span { display: block; margin-top: 4px; color: var(--muted); font-size: 14px; }
+    .layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 48px; align-items: start; }
+    aside { position: sticky; top: 28px; padding: 14px 0; }
+    aside h2 { margin: 0 0 12px; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+    aside a { display: block; padding: 6px 0; color: var(--muted); font-size: 14px; text-decoration: none; }
+    article { min-width: 0; padding: 30px 40px; border: 1px solid var(--line); border-radius: 26px; background: #fffdf9; box-shadow: 0 12px 40px #563f2d06; }
+    section + section { margin-top: 32px; padding-top: 26px; border-top: 1px solid var(--line); }
+    section h2 { margin: 0 0 12px; font-size: 24px; line-height: 1.3; letter-spacing: -.6px; }
+    p { margin: 0 0 15px; }
+    section p:last-child { margin-bottom: 0; }
+    ul { margin: 12px 0 16px; padding-left: 23px; }
+    li { margin: 8px 0; }
+    code { font-size: .86em; overflow-wrap: anywhere; }
+    .contact { margin: 32px 0 0; padding: 24px 28px; border-radius: 20px; background: #e8eedf; }
+    .contact strong { display: block; color: var(--green); font-size: 21px; }
+    .contact p { margin: 4px 0 8px; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding: 24px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 800px) { .pebbles { display: none; } .layout { grid-template-columns: 1fr; gap: 18px; } aside { position: static; padding: 0 0 18px; } aside a { display: inline-block; margin-right: 18px; } .summary { margin-bottom: 32px; } }
+    @media (max-width: 520px) { .wrap { padding: 0 20px; } .top { padding-top: 22px; padding-bottom: 22px; gap: 18px; } nav a { padding: 9px 12px; } .hero { padding-top: 36px; } h1 { letter-spacing: -1.7px; } .intro { font-size: 17px; } .summary { grid-template-columns: 1fr; gap: 10px; } .summary div { padding: 14px 18px; } article { padding: 26px 22px; border-radius: 20px; } section h2 { font-size: 22px; } .contact { padding: 22px; } }
+    @media print { body { background: white; color: black; font-size: 11pt; } .wrap { width: 100%; padding: 0; } nav, aside, .pebbles, .skip { display: none; } .hero { padding-top: 24px; } .summary { margin-bottom: 24px; } .layout { display: block; } article { padding: 0; border: 0; box-shadow: none; } h1 { font-size: 32pt; } .contact, .summary div { box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to policy</a>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">Thumbprint<span>Little works of clay · Endroid</span></div>
+      <nav aria-label="Legal pages">
+        <a href="https://endroid.github.io/privacy-policy/thumbprint.html" aria-current="page">Privacy</a>
+        <a href="https://endroid.github.io/terms-of-service/thumbprint.html">Terms of service</a>
+      </nav>
+    </header>
+    <main id="content">
+      <div class="hero">
+        <p class="eyebrow">Your space. Your choices.</p>
+        <h1>Privacy policy<span>Personal by design.</span></h1>
+        <p class="intro">Your home screen should feel like yours. Here is what stays on your device, what you can choose to share, and how to stay in control.</p>
+        <p class="date">Updated <time datetime="2026-11-13">13 November 2026</time> · Android app <code>nl.endroid.thumbprint</code></p>
+        <div class="pebbles" aria-hidden="true"><i></i><i></i><i></i></div>
+      </div>
+      <div class="summary" aria-label="Privacy at a glance">
+        <div><strong>No account</strong><span>Browse and save favourites offline.</span></div>
+        <div><strong>No ads or analytics</strong><span>No advertising or tracking SDKs.</span></div>
+        <div><strong>You choose to share</strong><span>Icon requests are never sent automatically.</span></div>
+      </div>
+      <div class="layout">
+        <aside aria-label="On this page">
+          <h2>On this page</h2>
+          <a href="#overview">The short version</a><a href="#device">On your device</a><a href="#sharing">Choosing to share</a><a href="#verification">Google Play verification</a><a href="#support">Support &amp; retention</a><a href="#rights">Your choices &amp; rights</a><a href="#website">This website &amp; updates</a>
+        </aside>
+        <article aria-label="Privacy policy details">
+          <section id="overview"><h2>The short version</h2>
+            <p>Thumbprint is an Android icon pack provided by Endroid, based in the Netherlands. Endroid is responsible for personal information you send us through support or icon requests. Contact us at <a href="mailto:info@endroid.nl">info@endroid.nl</a>.</p>
+            <p>The app has no advertisements, analytics, tracking SDKs or user accounts. It has no in-app purchases or subscriptions, and does not automatically upload information to Endroid. Browsing, searching and favourites work offline.</p>
+          </section>
+          <section id="device"><h2>What stays on your device</h2>
+            <p>Favourite icon identifiers are stored in the app's private preferences. Android may retain your search text, selected category, favourites filter, scroll position and request selection when recreating a screen. These settings restore your view; they are not usage analytics. Android backup is disabled for the app.</p>
+            <p>The app checks installed launchers and launchable apps locally to offer compatible apply actions and let you select missing icons to request. No installed-app inventory is automatically sent to Endroid. Thumbprint does not read your contacts, messages, photos or location.</p>
+          </section>
+          <section id="sharing"><h2>Only when you choose to share</h2>
+            <p><strong>Choosing an icon:</strong> selecting an icon through another app's picker creates a PNG in Thumbprint's private cache and returns the selected icon to the calling app with temporary read access. Applying the pack opens the selected launcher or Android home-app settings. The receiving app controls its own copy and settings.</p>
+            <p><strong>Requesting icons:</strong> you choose the apps to include, then choose a sharing or email app and whether to send the request. The ZIP contains those selected app names, launcher components and icon images, plus the verification record described below. Nothing is emailed automatically, and there is no purchase gate for preparing or sharing a request.</p>
+            <p>Once you send a message or share a file, your chosen app or email provider processes that copy under its own policy. Ordinary email is not guaranteed to be end-to-end encrypted.</p>
+          </section>
+          <section id="verification"><h2>Google Play verification</h2>
+            <p>When preparing a request, Thumbprint asks the installed Google Play service for a licence response for this app. Google handles that check through its service under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+            <p>The ZIP retains Google's signed response when available, including a denial, or an explicit unsigned record that verification was unavailable. A signed response can contain the app's package and version, a per-user/per-app identifier, a request number and a timestamp. The request number is derived from the selected-app mapping. Endroid receives this record only if you choose to send the ZIP; it does not receive your Google password or payment details.</p>
+            <p>An unavailable or negative response does not prevent you from using the app or sharing an icon request. Unavailable verification is not proof of a purchase or of piracy.</p>
+          </section>
+          <section id="support"><h2>Support, email &amp; retention</h2>
+            <p>If you contact Endroid, we receive your email address, message and any attachments you choose to send. We use them to respond, handle icon requests and provide related support, not for advertising or profiling. Please do not send passwords, payment information or other sensitive information.</p>
+            <p>Where data-protection law applies, we process correspondence as needed to respond to your request or provide support, for our legitimate interest in managing that correspondence, and to meet legal obligations where applicable. We keep it only as long as needed for those purposes and reasonable follow-up, or as required by law.</p>
+            <p>Email providers process messages for delivery and hosting. We do not sell personal information or share it with advertising or analytics services. Information may be disclosed if required by law.</p>
+          </section>
+          <section id="rights"><h2>Your choices &amp; rights</h2>
+            <ul>
+              <li>Remove favourites inside the app. Clear its cache to remove temporary exports and request ZIPs, or clear app storage to reset local data.</li>
+              <li>Uninstalling removes the app's own local data, but cannot remove copies already held by a launcher, sharing app or email provider.</li>
+              <li>Contact <a href="mailto:info@endroid.nl">info@endroid.nl</a> to request access, correction or deletion of correspondence held by Endroid. We may ask you to confirm control of the sending address.</li>
+            </ul>
+            <p>Depending on applicable law, you may also have rights to restrict or object to processing and to data portability. You may complain to your local data-protection authority, including the Dutch <a href="https://www.autoriteitpersoonsgegevens.nl/en">Autoriteit Persoonsgegevens</a>. There is no Thumbprint account to delete. If a child has sent information that you believe should be removed, please contact us.</p>
+          </section>
+          <section id="website"><h2>This website &amp; policy updates</h2>
+            <p>These legal pages load no third-party fonts, analytics or tracking scripts. GitHub Pages hosts this website and may process standard connection information, such as your IP address, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>. Website hosting is separate from the Android app's local processing.</p>
+            <p>If our data practices change, we will update this policy and its date, and provide any notice required by law.</p>
+          </section>
+        </article>
+      </div>
+      <div class="contact"><strong>A question about your privacy?</strong><p>Ask a question or request help with your information.</p><a href="mailto:info@endroid.nl">info@endroid.nl</a></div>
+    </main>
+    <footer><span>Thumbprint · Made with character by Endroid.</span><a href="https://endroid.github.io/terms-of-service/thumbprint.html">Read the terms of service ↗</a></footer>
+  </div>
+</body>
+</html>

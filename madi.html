@@ -1,17 +1,83 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Madí privacy policy</title>
-<main>
-  <h1>Madí privacy policy</h1>
-  <p>Effective 24 November 2026. Endroid, Netherlands, provides Madí for Android (<code>nl.endroid.madi</code>).</p>
-  <h2>Browsing and favorites</h2>
-  <p>Browsing, search and favorites work on your device. Favorites are stored locally. Clearing app data or uninstalling removes them. Madí has no ads, analytics, accounts or in-app purchases.</p>
-  <h2>Optional icon requests</h2>
-  <p>The request screen lists launchable apps. The ZIP includes only the app names, launcher components and app images you select. Where configured and available, the app asks Google Play for a signed licence verification response for the request; the ZIP records the response or that it is unavailable. The app does not send the ZIP automatically. You choose an email app and whether to send the message.</p>
-  <p>If you send a request or support email, Endroid receives your address and the material you send, uses it to handle your request, and keeps it only as needed for that purpose or legal obligations. Your email provider and Google Play apply their own privacy policies.</p>
-  <h2>Contact and rights</h2>
-  <p>For privacy questions or to exercise applicable access, correction or deletion rights, contact <a href="mailto:info@endroid.nl">info@endroid.nl</a>. Madí is not directed to children under 13.</p>
-</main>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191c30">
+  <meta name="description" content="How Madí handles favorites, optional icon requests, and your privacy rights.">
+  <title>Privacy policy · Madí</title>
+  <style>
+    :root { color-scheme: light; --navy:#191c30; --paper:#f9f2e6; --card:#fffcf6; --ink:#202031; --muted:#595766; --blue:#21479b; --red:#a6302a; --gold:#ffcb38; --line:#ded5c9; }
+    * { box-sizing:border-box; } body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.7 system-ui,sans-serif; }
+    .wrap { width:min(1080px,100%); padding-inline:clamp(18px,4vw,42px); margin:auto; }
+    a { color:var(--blue); text-underline-offset:4px; } a:focus-visible { outline:3px solid #cf7315; outline-offset:4px; }
+    .skip { position:absolute; top:0; left:12px; transform:translateY(-150%); padding:8px 12px; background:var(--card); z-index:2; }
+    .skip:focus { transform:translateY(12px); }
+    header { background:var(--navy); color:#fff3dd; }
+    .bar { display:flex; align-items:center; justify-content:space-between; gap:10px 24px; flex-wrap:wrap; padding:19px 0; border-bottom:1px solid #ffffff2b; }
+    .brand { font:700 23px Georgia,serif; } .brand small { padding-left:8px; color:#efcf72; font:600 12px system-ui,sans-serif; }
+    nav { display:flex; flex-wrap:wrap; gap:6px 12px; } nav a { color:#fff3dd; padding:4px 2px; } nav [aria-current] { color:var(--gold); text-decoration-thickness:2px; }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(118px,230px); align-items:center; gap:26px; padding:52px 0 60px; }
+    .label { margin:0 0 10px; color:var(--gold); font-size:.75rem; font-weight:750; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { font:400 clamp(2.6rem,7vw,4.8rem)/1.05 Georgia,serif; letter-spacing:-.045em; margin:0; }
+    .intro { max-width:55ch; margin:18px 0 10px; color:#f5e5ca; } .date { margin:0; color:#cbc7d1; font-size:.85rem; }
+    svg { width:100%; height:auto; max-height:178px; }
+    .summary { list-style:none; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:0; margin:-20px 0 36px; position:relative; }
+    .summary li { background:var(--card); padding:12px 16px; border:1px solid var(--line); border-top:4px solid var(--red); }
+    .summary li:nth-child(2) { border-top-color:var(--blue); } .summary li:nth-child(3) { border-top-color:#c89412; }
+    .summary strong { display:block; } .summary span { color:var(--muted); font-size:.88rem; }
+    article { max-width:790px; margin:auto; background:var(--card); padding:clamp(20px,5vw,44px); border:1px solid var(--line); }
+    section + section { margin-top:25px; padding-top:21px; border-top:1px solid var(--line); }
+    h2 { margin:0 0 8px; font:400 clamp(1.45rem,4vw,1.8rem)/1.2 Georgia,serif; }
+    p { margin:0 0 10px; } section p:last-child { margin-bottom:0; } code { overflow-wrap:anywhere; }
+    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; margin:26px 0 34px; color:var(--muted); font-size:.88rem; }
+    @media (max-width:630px) { .hero { grid-template-columns:minmax(0,1fr) 58px; gap:14px; padding:30px 0 44px; } .summary { grid-template-columns:1fr; gap:8px; margin-bottom:22px; } .summary strong { display:inline; margin-right:5px; } }
+    @media print { header { background:white; color:black; } .hero p,.brand small { color:black; } nav, .skip, svg { display:none; } .summary { margin-top:0; } article { border:0; padding:0; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to privacy policy</a>
+  <header>
+    <div class="wrap">
+      <div class="bar"><div class="brand">Madí <small>Endroid</small></div>
+        <nav aria-label="Legal pages"><a href="https://endroid.github.io/privacy-policy/madi.html" aria-current="page">Privacy policy</a><a href="https://endroid.github.io/terms-of-service/madi.html">Terms of service</a></nav>
+      </div>
+      <div class="hero">
+        <div><p class="label">Android icon pack</p><h1>Privacy policy</h1>
+          <p class="intro">What stays on your device, what you can choose to share, and how we handle it.</p>
+          <p class="date">Effective <time datetime="2026-11-24">24 November 2026</time> · <code>nl.endroid.madi</code></p>
+        </div>
+        <svg viewBox="0 0 200 170" aria-hidden="true" focusable="false">
+          <path fill="#3159b1" d="M14 120 43 48 105 59 87 118 46 152Z"/><path fill="#e14d3b" d="M47 30 136 11 126 64 88 109 66 84Z"/>
+          <path fill="#ffcb38" d="M107 85 184 55 192 111 151 145 92 129Z"/><path fill="#fff3dd" d="M123 44 166 31 170 70 141 113 111 93Z"/>
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main id="content" class="wrap">
+    <ul class="summary" aria-label="Privacy at a glance">
+      <li><strong>Local favorites</strong><span>Browse and search offline.</span></li>
+      <li><strong>No ads or analytics</strong><span>No account required.</span></li>
+      <li><strong>Optional sharing</strong><span>Requests are never sent automatically.</span></li>
+    </ul>
+    <article aria-label="Privacy policy details">
+      <section><h2>On your device</h2>
+        <p>Endroid, Netherlands, provides Madí. The app has no ads, analytics, user accounts or in-app purchases. Your favorites stay in the app’s private storage. Android backup is disabled for the app. Clear its storage or uninstall it to remove its local data.</p>
+        <p>The request screen lists launchable apps locally so you can choose which icons to request. Applying the pack or choosing an individual icon hands it to your launcher, which manages its own data and settings.</p>
+      </section>
+      <section><h2>Optional requests and verification</h2>
+        <p>A request ZIP includes the app names, launcher components and app icon images you select, plus a verification record. Where configured and available, the app asks the installed Google Play service for a signed licence response. The response can include Madí’s package and version, a per-user app identifier, a request number and a timestamp. Otherwise the ZIP records that verification is unavailable. Google handles the check under <a href="https://policies.google.com/privacy">its privacy policy</a>.</p>
+        <p>Nothing is sent automatically. You choose an email app and whether to send the ZIP. Your email provider processes that message under its own policy. Clearing Madí’s data does not delete copies already shared with other apps or people.</p>
+      </section>
+      <section><h2>Support, retention and your rights</h2>
+        <p>If you send us a request or support email, Endroid receives your address, message and any attachments. We use them to handle your request and related follow-up, not for advertising or profiling. We keep them only as long as needed for those purposes or to meet legal obligations. Please don’t send passwords or payment information.</p>
+        <p>Contact <a href="mailto:info@endroid.nl">info@endroid.nl</a> to ask about your information or exercise applicable access, correction or deletion rights. You may also contact your local data protection authority. Madí is not directed to children under 13.</p>
+      </section>
+      <section><h2>This website and policy updates</h2>
+        <p>These pages use no analytics, cookies set by the pages, or third-party fonts. GitHub Pages provides hosting and may process standard connection information under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>. If the policy changes, we will update this page and its effective date.</p>
+      </section>
+    </article>
+    <footer><span>Madí · An Android icon pack by Endroid</span><a href="mailto:info@endroid.nl">Contact Endroid</a></footer>
+  </main>
+</body>
 </html>

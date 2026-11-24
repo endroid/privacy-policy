@@ -1,17 +1,146 @@
 <!doctype html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arte Povera privacy policy</title>
-<main>
-  <h1>Arte Povera privacy policy</h1>
-  <p>Effective 24 November 2026. Endroid, Netherlands, provides Arte Povera for Android (<code>nl.endroid.artepovera</code>).</p>
-  <h2>Browsing and favorites</h2>
-  <p>Browsing, search and favorites work on your device. Favorites are stored locally and can be deleted by clearing app data or uninstalling. Arte Povera has no ads, analytics, accounts or in-app purchases.</p>
-  <h2>Optional icon requests</h2>
-  <p>The request screen lists launchable apps on your device. The request ZIP includes details for only the apps you select, such as names, launcher components and app icon images. Where configured and available, the app asks Google Play for a signed licence verification response for the request. The ZIP can include that response or an explicit unavailable record. The app does not send the ZIP automatically. You choose an email app and whether to send it.</p>
-  <p>If you email a request or support message, Endroid receives your address and the material you send. Endroid uses it to answer, verify and fulfill your request, and keeps it only as needed for those purposes or legal obligations. Your email provider and Google Play apply their own policies to their services.</p>
-  <h2>Contact and rights</h2>
-  <p>For privacy questions or to exercise applicable rights of access, correction or deletion, contact <a href="mailto:info@endroid.nl">info@endroid.nl</a>. Arte Povera is not directed to children under 13.</p>
-</main>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Arte Povera handles your information: local favorites, optional icon requests, Google Play verification and your privacy choices.">
+  <meta name="theme-color" content="#201d19">
+  <title>Privacy policy · Arte Povera</title>
+  <style>
+    :root { color-scheme: light; --night: #201d19; --paper: #f3ece0; --card: #fbf7f0; --ink: #2b251f; --muted: #6e6357; --clay: #9a3f25; --ochre: #b98a4c; --gold: #dab879; --line: #e2d7c6; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 24px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.75 Georgia, "Times New Roman", serif; }
+    .sans, nav, .eyebrow, .date, .summary, aside, footer, .brand span, .contact p { font-family: system-ui, sans-serif; }
+    a { color: var(--clay); text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--ochre); outline-offset: 5px; border-radius: 3px; }
+    .skip { position: absolute; top: -80px; left: 20px; z-index: 2; padding: 8px 16px; background: white; }
+    .skip:focus { top: 12px; }
+    .wrap { width: min(1100px, 100%); margin: auto; padding: 0 32px; }
+    .band { background: var(--night) radial-gradient(ellipse 70% 120% at 78% 40%, #4a3a28 0%, #2a241e 55%, var(--night) 100%); color: #f1e9db; }
+    .top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 28px; padding-bottom: 26px; border-bottom: 1px solid #ffffff1c; }
+    .brand { color: #f1e9db; font-size: 26px; letter-spacing: -.3px; }
+    .brand span { display: block; margin-top: 2px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; }
+    nav { display: flex; flex-wrap: wrap; gap: 6px; }
+    nav a { padding: 8px 16px; border: 1px solid #ffffff26; border-radius: 4px; color: #f1e9db; font-size: 14px; font-weight: 600; text-decoration: none; }
+    nav a:hover { border-color: var(--gold); }
+    nav a[aria-current="page"] { background: var(--gold); border-color: var(--gold); color: var(--night); }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) 210px; align-items: center; gap: 40px; padding: 58px 0 60px; }
+    .eyebrow { margin: 0 0 18px; color: var(--gold); font-size: 12px; font-weight: 700; letter-spacing: 2.6px; text-transform: uppercase; }
+    h1 { margin: 0; font-size: clamp(42px, 6.6vw, 72px); font-weight: 400; line-height: 1.04; letter-spacing: -1.5px; }
+    h1 span { display: block; margin-top: 12px; color: var(--gold); font-size: .46em; font-style: italic; letter-spacing: -.3px; }
+    .intro { max-width: 620px; margin: 24px 0 16px; color: #d9ccb8; font-size: 19px; }
+    .date { color: #a8998a; font-size: 13px; }
+    .date code { color: #d9ccb8; }
+    .emblem { justify-self: center; width: 180px; filter: drop-shadow(0 22px 22px #00000080); }
+    .summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: -30px 0 52px; }
+    .summary div { padding: 20px 22px; border: 1px solid var(--line); border-top: 4px solid var(--ochre); border-radius: 4px; background: var(--card); box-shadow: 0 10px 28px #3a2a1a14; }
+    .summary div:nth-child(2) { border-top-color: var(--clay); }
+    .summary div:nth-child(3) { border-top-color: #5f6b5a; }
+    .summary strong { display: block; font-size: 18px; }
+    .summary span { display: block; margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .layout { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 48px; align-items: start; }
+    aside { position: sticky; top: 28px; padding: 14px 0; }
+    aside h2 { margin: 0 0 12px; color: var(--ochre); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; }
+    aside a { display: block; padding: 6px 0 6px 12px; border-left: 2px solid var(--line); color: var(--muted); font-size: 14px; text-decoration: none; }
+    aside a:hover { border-left-color: var(--clay); color: var(--ink); }
+    article { min-width: 0; padding: 34px 44px; border: 1px solid var(--line); border-radius: 4px; background: var(--card); box-shadow: 0 14px 40px #3a2a1a0d; }
+    section + section { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--line); }
+    section h2 { margin: 0 0 12px; font-size: 27px; font-weight: 400; line-height: 1.25; letter-spacing: -.3px; }
+    section h2::before { content: ""; display: inline-block; width: 12px; height: 12px; margin: 0 12px 4px 0; border-radius: 45% 55% 40% 60%; background: var(--ochre); transform: rotate(-12deg); }
+    section:nth-child(3n+2) h2::before { background: var(--clay); }
+    section:nth-child(3n) h2::before { background: #5f6b5a; }
+    p { margin: 0 0 15px; }
+    section p:last-child { margin-bottom: 0; }
+    ul { margin: 12px 0 16px; padding-left: 23px; }
+    li { margin: 8px 0; }
+    code { font-size: .84em; overflow-wrap: anywhere; }
+    .contact { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin: 34px 0 0; padding: 26px 30px; border-radius: 4px; background: var(--night); color: #f1e9db; }
+    .contact strong { display: block; font-size: 23px; font-weight: 400; }
+    .contact p { margin: 4px 0 0; color: #bfb1a0; font-size: 15px; }
+    .contact a { padding: 10px 18px; border-radius: 4px; background: var(--gold); color: var(--night); font-family: system-ui, sans-serif; font-weight: 700; text-decoration: none; }
+    footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding: 24px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 800px) { .hero { grid-template-columns: 1fr; gap: 0; padding-bottom: 54px; } .emblem { display: none; } .layout { grid-template-columns: 1fr; gap: 18px; } aside { position: static; padding: 0 0 18px; } aside a { display: inline-block; margin: 0 14px 6px 0; } .summary { margin-bottom: 32px; } }
+    @media (max-width: 520px) { .wrap { padding: 0 20px; } .top { padding-top: 22px; padding-bottom: 22px; gap: 16px; } .hero { padding-top: 38px; } .intro { font-size: 17px; } .summary { grid-template-columns: 1fr; gap: 10px; } .summary div { padding: 14px 18px; } article { padding: 26px 22px; } section h2 { font-size: 23px; } .contact { padding: 22px; } }
+    @media print { body { background: white; color: black; font-size: 11pt; } .band { background: none; color: black; } .brand, h1, .intro, .date { color: black; } .wrap { width: 100%; padding: 0; } nav, aside, .emblem, .skip { display: none; } .summary { margin: 0 0 24px; } .layout { display: block; } article { padding: 0; border: 0; box-shadow: none; } .contact { background: none; color: black; padding: 0; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to policy</a>
+  <div class="band">
+    <div class="wrap">
+      <header class="top">
+        <div class="brand">Arte Povera<span>Found stone, hessian, twigs and wire · Endroid</span></div>
+        <nav aria-label="Legal pages">
+          <a href="https://endroid.github.io/privacy-policy/arte-povera.html" aria-current="page">Privacy</a>
+          <a href="https://endroid.github.io/terms-of-service/arte-povera.html">Terms of service</a>
+        </nav>
+      </header>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Plain materials. Plain words.</p>
+          <h1>Privacy policy<span>Nothing hidden in the seams.</span></h1>
+          <p class="intro">Arte Povera is a collection of small sculptures for your home screen. Here is what stays on your device, what you can choose to share, and how to stay in control.</p>
+          <p class="date">Effective <time datetime="2026-11-24">24 November 2026</time> · Android app <code>nl.endroid.artepovera</code></p>
+        </div>
+        <img class="emblem" src="data:image/webp;base64,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" width="160" height="156" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <main id="content">
+      <div class="summary" aria-label="Privacy at a glance">
+        <div><strong>No account</strong><span>Browse, search and keep favorites offline.</span></div>
+        <div><strong>No ads or analytics</strong><span>No advertising or tracking SDKs.</span></div>
+        <div><strong>You choose to share</strong><span>Icon requests are never sent automatically.</span></div>
+      </div>
+      <div class="layout">
+        <aside aria-label="On this page">
+          <h2>On this page</h2>
+          <a href="#overview">The short version</a><a href="#device">On your device</a><a href="#sharing">Choosing to share</a><a href="#verification">Google Play verification</a><a href="#support">Support &amp; retention</a><a href="#rights">Your choices &amp; rights</a><a href="#website">This website &amp; updates</a>
+        </aside>
+        <article aria-label="Privacy policy details">
+          <section id="overview"><h2>The short version</h2>
+            <p>Arte Povera is an Android icon pack provided by Endroid, based in the Netherlands. Endroid is responsible for personal information you send us through support or icon requests. Contact us at <a href="mailto:info@endroid.nl">info@endroid.nl</a>.</p>
+            <p>The app has no advertisements, analytics, tracking SDKs or user accounts. It has no in-app purchases or subscriptions and does not automatically upload information to Endroid. Browsing, searching and favorites work offline.</p>
+          </section>
+          <section id="device"><h2>What stays on your device</h2>
+            <p>Your favorite icons are stored in the app's private storage. Android may keep your search text and scroll position while recreating a screen; this restores your view and is not usage analytics. Android backup is disabled for the app.</p>
+            <p>The icon request screen lists launchable apps on your device so you can choose which missing icons to ask for. This list is built locally and is not sent anywhere automatically. Arte Povera does not read your contacts, messages, photos or location.</p>
+          </section>
+          <section id="sharing"><h2>Only when you choose to share</h2>
+            <p><strong>Requesting icons:</strong> you choose the apps to include, then choose an email or sharing app and whether to send the request. The ZIP contains only the selected apps' names, launcher components and icon images, plus the verification record described below. Nothing is emailed automatically.</p>
+            <p><strong>Applying icons:</strong> applying the pack or choosing a single icon hands it to your launcher. That launcher keeps and controls its own copy and settings.</p>
+            <p>Once you send a message or share a file, your chosen app or email provider processes that copy under its own policy. Ordinary email is not guaranteed to be end-to-end encrypted.</p>
+          </section>
+          <section id="verification"><h2>Google Play verification</h2>
+            <p>Where configured and available, Arte Povera asks the installed Google Play service for a licence response for this app while preparing a request. Google handles that check under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+            <p>The ZIP includes Google's signed response when one is available, or an explicit record that verification was unavailable. A signed response can contain the app's package and version, a per-user and per-app identifier, a request number and a timestamp. Endroid receives this record only if you send the ZIP; it never receives your Google password or payment details.</p>
+            <p>An unavailable or negative response does not stop you from using the app or sending a request.</p>
+          </section>
+          <section id="support"><h2>Support, email &amp; retention</h2>
+            <p>If you contact Endroid, we receive your email address, your message and any attachments you send. We use them to respond, handle icon requests and provide related support, never for advertising or profiling. Please do not send passwords, payment information or other sensitive information.</p>
+            <p>Where data-protection law applies, we process correspondence to respond to your request, for our legitimate interest in managing that correspondence, and to meet legal obligations. We keep it only as long as needed for those purposes and reasonable follow-up, or as required by law.</p>
+            <p>We do not sell personal information or share it with advertising or analytics services. Information may be disclosed if required by law.</p>
+          </section>
+          <section id="rights"><h2>Your choices &amp; rights</h2>
+            <ul>
+              <li>Remove favorites inside the app, or clear its storage to reset all local data.</li>
+              <li>Uninstalling removes the app's own data, but not copies already held by a launcher, sharing app or email provider.</li>
+              <li>Contact <a href="mailto:info@endroid.nl">info@endroid.nl</a> to request access to, correction of or deletion of correspondence held by Endroid. We may ask you to confirm control of the sending address.</li>
+            </ul>
+            <p>Depending on applicable law, you may also have rights to restrict or object to processing and to data portability, and you may complain to your local data-protection authority, including the Dutch <a href="https://www.autoriteitpersoonsgegevens.nl/en">Autoriteit Persoonsgegevens</a>. Arte Povera is not directed to children under 13. There is no account to delete.</p>
+          </section>
+          <section id="website"><h2>This website &amp; policy updates</h2>
+            <p>These legal pages load no third-party fonts, analytics or tracking scripts. GitHub Pages hosts them and may process standard connection information, such as your IP address, under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a>.</p>
+            <p>If our data practices change, we will update this policy and its date, and give any notice required by law.</p>
+          </section>
+        </article>
+      </div>
+      <div class="contact"><div><strong>A question about your privacy?</strong><p>Ask a question or request help with your information.</p></div><a href="mailto:info@endroid.nl">info@endroid.nl</a></div>
+    </main>
+    <footer><span>Arte Povera · Made of the ordinary by Endroid.</span><a href="https://endroid.github.io/terms-of-service/arte-povera.html">Read the terms of service ↗</a></footer>
+  </div>
+</body>
 </html>
